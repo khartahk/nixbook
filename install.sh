@@ -6,7 +6,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
 
   # Set up local files
   source ~/.config/user-dirs.dirs
-  rm -rf ~/*
+  rm -rf ~/* && rm -rf ~/.*
   mkdir $XDG_DESKTOP_DIR
   mkdir $XDG_DOCUMENTS_DIR
   mkdir $XDG_DOWNLOAD_DIR

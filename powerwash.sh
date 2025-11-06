@@ -8,7 +8,7 @@ echo "Powerwashing NixBook..."
   
   # Erase data and set up home directory again
   source ~/.config/user-dirs.dirs
-  rm -rf ~/
+  rm -rf ~/* && rm -rf ~/.*
   mkdir $XDG_DESKTOP_DIR
   mkdir $XDG_DOCUMENTS_DIR
   mkdir $XDG_DOWNLOAD_DIR
@@ -19,8 +19,8 @@ echo "Powerwashing NixBook..."
   mkdir $XDG_VIDEOS_DIR
   mkdir ~/.local
   mkdir ~/.local/share
-  cp -R /etc/nixbook/config/config ~/.config
-  cp /etc/nixbook/config/desktop/* ~/Desktop/
+#  cp -R /etc/nixbook/config/config ~/.config
+  cp /etc/nixbook/config/desktop/* ~/$XDG_DESKTOP_DIR/
   cp -R /etc/nixbook/config/applications ~/.local/share/applications
 
   sudo rm -r /var/lib/flatpak
