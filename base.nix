@@ -255,6 +255,13 @@ in
             pkgs.gnomeExtensions.gsconnect.extensionUuid
             pkgs.gnomeExtensions.gtk4-desktop-icons-ng-ding.extensionUuid
           ];
+          favorite-apps = [
+            "firefox.desktop"
+            "com.google.Chrome.desktop"
+            "org.gnome.Nautilus.desktop"
+            "org.libreoffice.LibreOffice.desktop"
+            "org.gnome.Console.desktop"
+          ];
         };
         # Configure individual extensions
         "org/gnome/shell/extensions/dash-to-dock" = {
