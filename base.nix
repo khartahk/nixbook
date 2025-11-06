@@ -63,15 +63,15 @@ let
       ${notifyUsersScript} "Installing Google Chrome" "Please wait while we install Google Chrome..."
       ${pkgs.flatpak}/bin/flatpak install flathub com.google.Chrome -y
 
-      ${notifyUsersScript} "Installing Zoom" "Please wait while we install Zoom..."
-      ${pkgs.flatpak}/bin/flatpak install flathub us.zoom.Zoom -y
+#      ${notifyUsersScript} "Installing Zoom" "Please wait while we install Zoom..."
+#      ${pkgs.flatpak}/bin/flatpak install flathub us.zoom.Zoom -y
 
       ${notifyUsersScript} "Installing LibreOffice" "Please wait while we install LibreOffice..."
       ${pkgs.flatpak}/bin/flatpak install flathub org.libreoffice.LibreOffice -y
 
       # Fix for zoom flatpak
-      ${pkgs.flatpak}/bin/flatpak override --env=ZYPAK_ZYGOTE_STRATEGY_SPAWN=0 us.zoom.Zoom
-      ${pkgs.flatpak}/bin/flatpak install flathub org.gtk.Gtk3theme.Mint-Y-Dark-Blue -y
+#      ${pkgs.flatpak}/bin/flatpak override --env=ZYPAK_ZYGOTE_STRATEGY_SPAWN=0 us.zoom.Zoom
+#      ${pkgs.flatpak}/bin/flatpak install flathub org.gtk.Gtk3theme.Mint-Y-Dark-Blue -y
 
 
       users=$(${pkgs.systemd}/bin/loginctl list-sessions --no-legend | ${pkgs.gawk}/bin/awk '{print $1}' | while read session; do
@@ -98,15 +98,8 @@ in
     DefaultTimeoutStopSec=10s
   '';
 
-  # Enable the X11 windowing system.
-#  services.xserver.enable = true;
-#  nixpkgs.config.allowUnfree = true;
-#  hardware.bluetooth.enable = true;
-
-  # Enable the Cinnamon Desktop Environment.
-#  services.xserver.displayManager.lightdm.enable = true;
-#  services.xserver.desktopManager.cinnamon.enable = true;
-#  xdg.portal.enable = true;
+  # Enable Bluetooth
+  hardware.bluetooth.enable = true;
 
   # Enable Printing
   services.printing.enable = true;
@@ -134,14 +127,14 @@ in
     xdg-desktop-portal-gnome
     system-config-printer
 
-    (makeDesktopItem {
-      name = "zoommtg-handler";
-      desktopName = "Zoom URI Handler";
-      exec = "gtk-launch us.zoom.Zoom %u";
-      mimeTypes = [ "x-scheme-handler/zoommtg" ];
-      noDisplay = true;
-      type = "Application";
-    })
+#    (makeDesktopItem {
+#      name = "zoommtg-handler";
+#      desktopName = "Zoom URI Handler";
+#      exec = "gtk-launch us.zoom.Zoom %u";
+#      mimeTypes = [ "x-scheme-handler/zoommtg" ];
+#      noDisplay = true;
+#      type = "Application";
+#    })
   ];
 
   services.flatpak.enable = true;
