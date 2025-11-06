@@ -241,6 +241,20 @@ in
     "broadcom-sta" # aka “wl”
   ];
   
+
+  {
+    programs.dconf.profiles.user.databases = [
+      {
+        #lockAll = true; # prevents overriding
+        settings = {
+          "org/gnome/desktop/background" = {
+            show-desktop-icons = true;
+          };
+        };
+      }
+    ];
+  }
+
 }
 
 # Notes
