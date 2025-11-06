@@ -5,16 +5,21 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
   echo "Installing NixBook..."
 
   # Set up local files
+  source ~/.config/user-dirs.dirs
   rm -rf ~/
-  mkdir ~/Desktop
-  mkdir ~/Documents
-  mkdir ~/Downloads
-  mkdir ~/Pictures
+  mkdir $XDG_DESKTOP_DIR
+  mkdir $XDG_DOCUMENTS_DIR
+  mkdir $XDG_DOWNLOAD_DIR
+  mkdir $XDG_MUSIC_DIR
+  mkdir $XDG_PICTURES_DIR
+  mkdir $XDG_PUBLICSHARE_DIR
+  mkdir $XDG_TEMPLATES_DIR
+  mkdir $XDG_VIDEOS_DIR
   mkdir ~/.local
   mkdir ~/.local/share
-  cp -R /etc/nixbook/config/config ~/.config
+#  cp -R /etc/nixbook/config/config ~/.config
   cp /etc/nixbook/config/desktop/* ~/Desktop/
-  cp -R /etc/nixbook/config/applications ~/.local/share/applications
+  cp -R /etc/nixbook/config/applications/* ~/.local/share/applications
 
   # The rest of the install should be hands off
   # Add Nixbook config and rebuild
@@ -27,11 +32,11 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
 
   # Add flathub and some apps
   flatpak install flathub com.google.Chrome -y
-  flatpak install flathub us.zoom.Zoom -y
+#  flatpak install flathub us.zoom.Zoom -y
   flatpak install flathub org.libreoffice.LibreOffice -y
   
   # Fix for zoom flatpak
-  flatpak override --env=ZYPAK_ZYGOTE_STRATEGY_SPAWN=0 us.zoom.Zoom
+#  flatpak override --env=ZYPAK_ZYGOTE_STRATEGY_SPAWN=0 us.zoom.Zoom
   
   reboot
 else
