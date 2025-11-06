@@ -268,6 +268,10 @@ in
           custom-theme-shrink = true;
           dash-max-icon-size = lib.gvariant.mkInt32 42;
         };
+        "org/gnome/shell/extensions/gtk4-ding" = {
+          show-home = false;
+          show-trash = false;
+        };
       };
     }
   ];
