@@ -266,7 +266,7 @@ in
         # Configure individual extensions
         "org/gnome/shell/extensions/dash-to-dock" = {
           custom-theme-shrink = true;
-          dash-max-icon-size = 42;
+          dash-max-icon-size = lib.gvariant.mkInt32 42;
         };
       };
     }
