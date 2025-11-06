@@ -121,6 +121,7 @@ in
     gnome-calculator
     gnome-calendar
     gnome-screenshot
+    gnomeExtensions.dash-to-dock
     gnomeExtensions.gsconnect
     gnomeExtensions.gtk4-desktop-icons-ng-ding
     flatpak
@@ -253,6 +254,7 @@ in
         "org/gnome/shell" = {
         # disable-user-extensions = true; # Optionally disable user extensions entirely
           enabled-extensions = [
+            pkgs.gnomeExtensions.dash-to-dock.extensionUuid
             pkgs.gnomeExtensions.gsconnect.extensionUuid
             pkgs.gnomeExtensions.gtk4-desktop-icons-ng-ding.extensionUuid
           ];
