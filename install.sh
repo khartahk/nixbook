@@ -6,7 +6,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
 
   # Set up local files
   source ~/.config/user-dirs.dirs
-  rm -rf ~/
+  rm -rf ~/*
   mkdir $XDG_DESKTOP_DIR
   mkdir $XDG_DOCUMENTS_DIR
   mkdir $XDG_DOWNLOAD_DIR
@@ -19,7 +19,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
   mkdir ~/.local/share
 #  cp -R /etc/nixbook/config/config ~/.config
   cp /etc/nixbook/config/desktop/* ~/Desktop/
-  cp -R /etc/nixbook/config/applications/* ~/.local/share/applications
+  cp -R /etc/nixbook/config/applications ~/.local/share/applications
 
   # The rest of the install should be hands off
   # Add Nixbook config and rebuild

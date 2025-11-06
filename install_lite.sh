@@ -17,7 +17,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
   mkdir $XDG_VIDEOS_DIR
   mkdir ~/.local
   mkdir ~/.local/share
-  cp -R /etc/nixbook/config/config_lite/* ~/.config
+#  cp -R /etc/nixbook/config/config_lite/* ~/.config
   cp /etc/nixbook/config/desktop_lite/* ~/Desktop/
   cp -R /etc/nixbook/config/applications_lite/* ~/.local/share/applications
 
