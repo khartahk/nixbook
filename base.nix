@@ -241,20 +241,23 @@ in
     "broadcom-sta" # aka “wl”
   ];
   
-
-  {
-    programs.dconf.profiles.user.databases = [
-      {
-        #lockAll = true; # prevents overriding
-        settings = {
-          "org/gnome/desktop/background" = {
-            show-desktop-icons = true;
-          };
+  programs.dconf.profiles.user.databases = [
+    {
+      lockAll = true; # prevents overriding
+      settings = {
+        "org/gnome/desktop/background" = {
+          "show-desktop-icons" = true;
         };
-      }
-    ];
-  }
-
+        "org/gnome/shell" = {
+        # disable-user-extensions = true; # Optionally disable user extensions entirely
+          enabled-extensions = [
+            pkgs.gnomeExtensions.gsconnect.extensionUuid
+            pkgs.gnomeExtensions.desktop-icons-ng-ding.extensionUuid
+          ];
+        };
+      };
+    }
+  ];
 }
 
 # Notes
