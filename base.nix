@@ -121,6 +121,8 @@ in
     gnome-calculator
     gnome-calendar
     gnome-screenshot
+    gnomeExtensions.gsconnect
+    gnomeExtensions.desktop-icons-ng-ding
     flatpak
     xdg-desktop-portal
     xdg-desktop-portal-gtk
