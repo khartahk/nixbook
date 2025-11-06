@@ -248,9 +248,6 @@ in
     {
       lockAll = true; # prevents overriding
       settings = {
-        "org/gnome/desktop/background" = {
-          "show-desktop-icons" = true;
-        };
         "org/gnome/shell" = {
         # disable-user-extensions = true; # Optionally disable user extensions entirely
           enabled-extensions = [
@@ -258,6 +255,11 @@ in
             pkgs.gnomeExtensions.gsconnect.extensionUuid
             pkgs.gnomeExtensions.gtk4-desktop-icons-ng-ding.extensionUuid
           ];
+        };
+        # Configure individual extensions
+        "org/gnome/shell/extensions/dash-to-dock" = {
+          custom-theme-shrink = true;
+          dash-max-icon-size = 42;
         };
       };
     }
