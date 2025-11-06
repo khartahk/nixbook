@@ -122,7 +122,7 @@ in
     gnome-calendar
     gnome-screenshot
     gnomeExtensions.gsconnect
-    gnomeExtensions.desktop-icons-ng-ding
+    gnomeExtensions.gtk4-desktop-icons-ng-ding
     flatpak
     xdg-desktop-portal
     xdg-desktop-portal-gtk
@@ -254,7 +254,7 @@ in
         # disable-user-extensions = true; # Optionally disable user extensions entirely
           enabled-extensions = [
             pkgs.gnomeExtensions.gsconnect.extensionUuid
-            pkgs.gnomeExtensions.desktop-icons-ng-ding.extensionUuid
+            pkgs.gnomeExtensions.gtk4-desktop-icons-ng-ding.extensionUuid
           ];
         };
       };
