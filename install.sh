@@ -18,7 +18,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
   mkdir ~/.local
   mkdir ~/.local/share
 #  cp -R /etc/nixbook/config/config ~/.config
-  cp /etc/nixbook/config/desktop/* ~/Desktop/
+  cp /etc/nixbook/config/desktop/* $XDG_DESKTOP_DIR/
   cp -R /etc/nixbook/config/applications ~/.local/share/applications
 
   # The rest of the install should be hands off

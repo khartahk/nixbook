@@ -18,7 +18,7 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
   mkdir ~/.local
   mkdir ~/.local/share
 #  cp -R /etc/nixbook/config/config_lite/* ~/.config
-  cp /etc/nixbook/config/desktop_lite/* ~/$XDG_DESKTOP_DIR/
+  cp /etc/nixbook/config/desktop_lite/* $XDG_DESKTOP_DIR/
   cp -R /etc/nixbook/config/applications_lite/* ~/.local/share/applications
 
   # Add Nixbook config and rebuild
