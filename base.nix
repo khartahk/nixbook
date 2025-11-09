@@ -221,7 +221,7 @@ in
       ${pkgs.nixos-rebuild}/bin/nixos-rebuild boot --upgrade
 
       # Fix for zoom flatpak
-      ${pkgs.flatpak}/bin/flatpak override --env=ZYPAK_ZYGOTE_STRATEGY_SPAWN=0 us.zoom.Zoom
+#      ${pkgs.flatpak}/bin/flatpak override --env=ZYPAK_ZYGOTE_STRATEGY_SPAWN=0 us.zoom.Zoom
 
       ${notifyUsersScript} "System Updates Complete" "Updates are complete!  Simply reboot the computer whenever is convenient to apply updates."
     '';
@@ -246,7 +246,7 @@ in
   
   programs.dconf.profiles.user.databases = [
     {
-      lockAll = true; # prevents overriding
+      lockAll = false; # prevents overriding
       settings = {
         "org/gnome/shell" = {
         # disable-user-extensions = true; # Optionally disable user extensions entirely
@@ -266,7 +266,7 @@ in
         # Configure individual extensions
         "org/gnome/shell/extensions/dash-to-dock" = {
           custom-theme-shrink = true;
-          dash-max-icon-size = lib.gvariant.mkInt32 42;
+          dash-max-icon-size = lib.gvariant.mkUInt32 42;
         };
         "org/gnome/shell/extensions/gtk4-ding" = {
           show-home = false;
